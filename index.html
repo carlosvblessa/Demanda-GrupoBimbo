@@ -521,7 +521,7 @@ produtos &lt;- fread(&quot;producto_tabla.csv&quot;, na.strings=c(&quot;&quot;,&
                            colClasses = c(Producto_ID = &quot;character&quot;,
                                           NombreProducto = &quot;character&quot;))
 
-# Carrega o cadastro de agencias, cidadese e estados.
+# Carrega o cadastro de agencias, cidades e estados.
 town_state &lt;- fread(&quot;town_state.csv&quot;, na.strings=c(&quot;&quot;,&quot;NA&quot;), nThread = 16,
                     encoding = &quot;UTF-8&quot;,select = c(&quot;Agencia_ID&quot;,&quot;Town&quot;,&quot;State&quot;),
                            colClasses = c(Agencia_ID = &quot;character&quot;,
@@ -611,7 +611,7 @@ system.time(produto_t100 &lt;- treino %&gt;% group_by(Producto_ID) %&gt;%
 </div>
 <div id="marcas" class="section level2">
 <h2><span class="header-section-number">6.6</span> Marcas</h2>
-<p>Em um exame preliminar na variável NombreProducto percebemos existir um padrão que indicam sua marca. O padrão é composto por duas ou três letras maiúsculas precedendo o código do produto repetido nos últimos caracteres de sua descrição.</p>
+<p>Em um exame preliminar na variável NombreProducto percebemos existir um padrão que indicam sua marca. O padrão é composto por duas ou três letras maiúsculas precedendo o código do produto repetido nos últimos caracteres de sua descrição. Por exemplo no produto de código <strong>2233</strong>: &quot;2233 - Pan Blanco 640g <strong>BIM</strong> 2233&quot;</p>
 <pre class="r"><code># Criar nova variável com as marcas constantes na variável NombreProducto
 
 # Função para extrair o final da string, composta por marca (com duas ou três
